@@ -12,3 +12,6 @@ arithFp_asm.o: arithFp_asm.s
 main: $(OBJ)
 	gcc $(OBJ) -o main
 
+clean:
+	rm -rf *.o main
+
