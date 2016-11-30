@@ -84,35 +84,35 @@ void bench_Pairing(){
 	G1CombPrecompute(Pi, P);
 	G2CombPrecompute(Qi, Q);
 
-	BENCH_BEGIN("Miller Loop", 100){
+	BENCH_BEGIN("Miller Loop", 10){
 		Fp_rand(A);
 		Fp_rand(A1);
 		G1combMult(kP.xyz, Pi, A);
 		G1J2A(kP.xyz, kP.xyz);
 		G2combMult(kQ.xyz, Qi, A1);
 		G2J2A(kQ.xyz, kQ.xyz);
-		BENCH_ADD(MillerLoop(C,kP,kQ), 100);
+		BENCH_ADD(MillerLoop(C,kP,kQ), 10);
 	}
-	BENCH_END(100, 100);
+	BENCH_END(10, 10);
 
 
-	BENCH_BEGIN("Final Exponentiation", 100){
+	BENCH_BEGIN("Final Exponentiation", 10){
 		Fpk_rand(B,12);
-		BENCH_ADD(FINAL_EXPONENTIATION(C,B), 100);
+		BENCH_ADD(FINAL_EXPONENTIATION(C,B), 10);
 	}
-	BENCH_END(100, 100);
+	BENCH_END(10, 10);
 
 
-	BENCH_BEGIN("Pairing", 100){
+	BENCH_BEGIN("Pairing", 10){
 		Fp_rand(A);
 		Fp_rand(A1);
 		G1combMult(kP.xyz, Pi, A);
 		G1J2A(kP.xyz, kP.xyz);
 		G2combMult(kQ.xyz, Qi, A1);
 		G2J2A(kQ.xyz, kQ.xyz);
-		BENCH_ADD(Pairing(C,kP,kQ), 100);
+		BENCH_ADD(Pairing(C,kP,kQ), 10);
 	}
-	BENCH_END(100, 100);
+	BENCH_END(10, 10);
 
 }
 
