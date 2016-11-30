@@ -9,6 +9,7 @@ Public domain.
  #define STRUCTURES_H
 
 #include<stdio.h>
+#include <stdint.h>
 
 typedef uint32_t Fp[9];
 typedef uint32_t Mul[17];

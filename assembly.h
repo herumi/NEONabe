@@ -7,6 +7,7 @@ Public domain.
 
 #ifndef ASSEMBLY_H
  #define ASSEMBLY_H
+#include <stdint.h>
 
 /*********************************
               SUMAS
